@@ -1,0 +1,14 @@
+<h1>Listing posts</h1>
+ <%= link_to "new post", :action => :new %>
+
+  <% @posts.each do |post| %>
+    <p>Post title: <%= post.title %></p>
+    <p>Post body: <%= post.text %></p>
+    <td><%= link_to 'Show', :action => :show, :id => post.id %></td>
+    <td><%= link_to 'Edit', :action => :edit, :id => post.id %></td>
+    <td><%= link_to 'Delete', { :action => :destroy, :id => post.id }, 
+    							:method => :delete, :confirm => 'Are you sure'%></td>
+    <hr>
+  <% end %>
+
+
